@@ -36,6 +36,7 @@ jobs:
           echo "---"
           cmake \
             --debug-find \
+            -DPython3_EXECUTABLE=$(which python) \
             -DPython3_ROOT_DIR="/c/hostedtoolcache/windows/python/3.8.10/x64" \
             -DPython3_FIND_STRATEGY=LOCATION \
             -DPython3_FIND_REGISTRY=NEVER \
@@ -57,6 +58,7 @@ jobs:
           echo ---
           cmake ^
             --debug-find ^
+            -DPython3_EXECUTABLE=$(which python) ^
             -DPython3_ROOT_DIR="c:/hostedtoolcache/windows/python/3.8.10/x64" ^
             -DPython3_FIND_STRATEGY=LOCATION ^
             -DPython3_FIND_REGISTRY=NEVER ^
