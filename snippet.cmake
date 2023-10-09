@@ -1,1 +1,1 @@
-find_package(Python 3 COMPONENTS Interpreter)
+find_package(Python3 COMPONENTS Interpreter)
