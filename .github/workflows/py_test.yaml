@@ -28,7 +28,7 @@ jobs:
           which python
           which pip
           echo "path: '$PATH'"
-          cmake -P /c/build/micro_ros_motoplus/snippet.cmake
+          cmake -P "${{ github.workspace }}/snippet.cmake"
       - name: Python info - cmd
         shell: cmd
         run: |
@@ -37,7 +37,7 @@ jobs:
           where python
           where pip
           echo "path: '%PATH%'"
-          cmake -P C:/build/micro_ros_motoplus/snippet.cmake
+          cmake -P "${{ github.workspace }}/snippet.cmake"
       - name: Setup ROS 2 Python venv
         run: |
           echo "path: '$PATH'"
@@ -51,7 +51,7 @@ jobs:
           which python
           which pip
           echo "path: '$PATH'"
-          cmake -P /c/build/micro_ros_motoplus/snippet.cmake
+          cmake -P "${{ github.workspace }}/snippet.cmake"
       - name: Python info 2 - cmd
         shell: cmd
         run: |
@@ -60,4 +60,4 @@ jobs:
           where python
           where pip
           echo "path: '%PATH%'"
-          cmake -P C:/build/micro_ros_motoplus/snippet.cmake
+          cmake -P "${{ github.workspace }}/snippet.cmake"
