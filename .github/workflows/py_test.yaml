@@ -42,7 +42,7 @@ jobs:
         run: |
           echo "path: '$PATH'"
           pip install -U wheel
-          pip install 'colcon-common-extensions==0.3.0'
+          pip install vcstool
           echo "path: '$PATH'"
       - name: Python info 2 - bash
         run: |
