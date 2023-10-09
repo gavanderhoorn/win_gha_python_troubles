@@ -9,7 +9,9 @@ jobs:
         shell: bash
     env:
       VERBOSE: 1
-
+      Python3_ROOT_DIR: "c:/hostedtoolcache/windows/python/3.8.10/x64"
+      Python3_FIND_STRATEGY: "LOCATION"
+      Python3_FIND_REGISTRY: "NEVER"
     steps:
       - uses: actions/checkout@v4
       - name: Setup CMake and Ninja
