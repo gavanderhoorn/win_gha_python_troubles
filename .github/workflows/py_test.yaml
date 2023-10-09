@@ -22,12 +22,18 @@ jobs:
           cache: 'pip'
       - name: Python info - bash
         run: |
+          ls -al /c/hostedtoolcache/windows/python/3.8.10/x64
+          echo "---"
           python --version
           pip --version
+          echo "---"
           which python
           which pip
+          echo "---"
           echo "path: '$PATH'"
+          echo "---"
           cmake -P "${{ github.workspace }}/snippet.cmake"
+          echo "---"
           cmake \
             -DPython3_ROOT_DIR="/c/hostedtoolcache/windows/python/3.8.10/x64" \
             -DPython3_FIND_STRATEGY=LOCATION \
@@ -36,16 +42,22 @@ jobs:
       - name: Python info - cmd
         shell: cmd
         run: |
+          dir /ah C:/hostedtoolcache/windows/python/3.8.10/x64
+          echo ---
           python --version
           pip --version
+          echo ---
           where python
           where pip
+          echo ---
           echo "path: '%PATH%'"
+          echo ---
           cmake -P "${{ github.workspace }}/snippet.cmake"
-          cmake \
-            -DPython3_ROOT_DIR="c:/hostedtoolcache/windows/python/3.8.10/x64" \
-            -DPython3_FIND_STRATEGY=LOCATION \
-            -DPython3_FIND_REGISTRY=NEVER \
+          echo ---
+          cmake ^
+            -DPython3_ROOT_DIR="c:/hostedtoolcache/windows/python/3.8.10/x64" ^
+            -DPython3_FIND_STRATEGY=LOCATION ^
+            -DPython3_FIND_REGISTRY=NEVER ^
             -P "${{ github.workspace }}/snippet.cmake"
       - name: Setup ROS 2 Python venv
         run: |
@@ -55,12 +67,18 @@ jobs:
           echo "path: '$PATH'"
       - name: Python info 2 - bash
         run: |
+          ls -al /c/hostedtoolcache/windows/python/3.8.10/x64
+          echo "---"
           python --version
           pip --version
+          echo "---"
           which python
           which pip
+          echo "---"
           echo "path: '$PATH'"
+          echo "---"
           cmake -P "${{ github.workspace }}/snippet.cmake"
+          echo "---"
           cmake \
             -DPython3_ROOT_DIR="/c/hostedtoolcache/windows/python/3.8.10/x64" \
             -DPython3_FIND_STRATEGY=LOCATION \
@@ -69,14 +87,20 @@ jobs:
       - name: Python info 2 - cmd
         shell: cmd
         run: |
+          dir /ah C:/hostedtoolcache/windows/python/3.8.10/x64
+          echo ---
           python --version
           pip --version
+          echo ---
           where python
           where pip
+          echo ---
           echo "path: '%PATH%'"
+          echo ---
           cmake -P "${{ github.workspace }}/snippet.cmake"
-          cmake \
-            -DPython3_ROOT_DIR="c:/hostedtoolcache/windows/python/3.8.10/x64" \
-            -DPython3_FIND_STRATEGY=LOCATION \
-            -DPython3_FIND_REGISTRY=NEVER \
+          echo ---
+          cmake ^
+            -DPython3_ROOT_DIR="c:/hostedtoolcache/windows/python/3.8.10/x64" ^
+            -DPython3_FIND_STRATEGY=LOCATION ^
+            -DPython3_FIND_REGISTRY=NEVER ^
             -P "${{ github.workspace }}/snippet.cmake"
