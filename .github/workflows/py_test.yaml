@@ -9,9 +9,6 @@ jobs:
         shell: bash
     env:
       VERBOSE: 1
-      Python3_ROOT_DIR: "c:/hostedtoolcache/windows/python/3.8.10/x64"
-      Python3_FIND_STRATEGY: "LOCATION"
-      Python3_FIND_REGISTRY: "NEVER"
     steps:
       - uses: actions/checkout@v4
       - name: Setup CMake and Ninja
@@ -31,6 +28,11 @@ jobs:
           which pip
           echo "path: '$PATH'"
           cmake -P "${{ github.workspace }}/snippet.cmake"
+          cmake \
+            -DPython3_ROOT_DIR="/c/hostedtoolcache/windows/python/3.8.10/x64" \
+            -DPython3_FIND_STRATEGY=LOCATION \
+            -DPython3_FIND_REGISTRY=NEVER \
+            -P "${{ github.workspace }}/snippet.cmake"
       - name: Python info - cmd
         shell: cmd
         run: |
@@ -40,6 +42,11 @@ jobs:
           where pip
           echo "path: '%PATH%'"
           cmake -P "${{ github.workspace }}/snippet.cmake"
+          cmake \
+            -DPython3_ROOT_DIR="c:/hostedtoolcache/windows/python/3.8.10/x64" \
+            -DPython3_FIND_STRATEGY=LOCATION \
+            -DPython3_FIND_REGISTRY=NEVER \
+            -P "${{ github.workspace }}/snippet.cmake"
       - name: Setup ROS 2 Python venv
         run: |
           echo "path: '$PATH'"
@@ -54,6 +61,11 @@ jobs:
           which pip
           echo "path: '$PATH'"
           cmake -P "${{ github.workspace }}/snippet.cmake"
+          cmake \
+            -DPython3_ROOT_DIR="/c/hostedtoolcache/windows/python/3.8.10/x64" \
+            -DPython3_FIND_STRATEGY=LOCATION \
+            -DPython3_FIND_REGISTRY=NEVER \
+            -P "${{ github.workspace }}/snippet.cmake"
       - name: Python info 2 - cmd
         shell: cmd
         run: |
@@ -63,3 +75,8 @@ jobs:
           where pip
           echo "path: '%PATH%'"
           cmake -P "${{ github.workspace }}/snippet.cmake"
+          cmake \
+            -DPython3_ROOT_DIR="c:/hostedtoolcache/windows/python/3.8.10/x64" \
+            -DPython3_FIND_STRATEGY=LOCATION \
+            -DPython3_FIND_REGISTRY=NEVER \
+            -P "${{ github.workspace }}/snippet.cmake"
